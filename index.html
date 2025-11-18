@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bus Stop Wake-Up Alarm</title>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+
+    <h1>Bus Stop Wake-Up Alarm</h1>
+
+    <!-- Destination Input -->
+    <label>Destination address or lat,long</label>
+    <input id="destinationInput" placeholder="Type address or lat,lon (example: 17.38, 78.48)" />
+
+    <!-- Convert + Set buttons -->
+    <div class="row">
+      <button class="secondary" id="geocodeBtn">Convert Address</button>
+      <button class="primary" id="setBtn">Set Destination</button>
+    </div>
+
+    <!-- Destination Display -->
+    <p id="destCoords">Destination: not set</p>
+
+    <!-- Radius -->
+    <label>Radius (meters)</label>
+    <input id="radiusInput" type="number" value="2000" />
+
+    <!-- Start / Stop buttons -->
+    <div class="row">
+      <button class="primary" id="startBtn">Start Tracking</button>
+      <button class="secondary" id="stopBtn" disabled>Stop</button>
+    </div>
+
+    <!-- Test Alarm -->
+    <button class="danger" id="testAlarmBtn">Test Alarm Sound</button>
+
+    <!-- Status -->
+    <p id="status">Status: idle</p>
+    <p id="distance">Distance: —</p>
+
+    <!-- Alarm Audio -->
+    <audio id="alarmAudio" src="alarm.mp3" preload="auto"></audio>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
